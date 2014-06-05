@@ -35,8 +35,7 @@ build do
   command "git clone https://github.com/kvspb/nginx-auth-ldap.git"
 
   configure_command = ["./configure",
-                       "--prefix=#{install_dir}/embedded".
-                       "--with-debug"]
+                       "--prefix=#{install_dir}/embedded"]
 
   command "cd libraries/libldap && make install", :env => configure_env
 

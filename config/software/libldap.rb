@@ -25,14 +25,13 @@ source url: "ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-#{ver
 
 relative_path "openldap-#{version}"
 
-env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include",
-        "CFLAGS"      => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include",
-        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include -D_GNU_SOURCE",
-        "LD_RUN_PATH" => "#{install_dir}/embedded/lib"
+env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+        "CFLAGS"      => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -D_GNU_SOURCE",
+        "LD_RUN_PATH" => "#{install_dir}/embedded/lib",
 }
 
 build do
-  command "git clone https://github.com/kvspb/nginx-auth-ldap.git"
 
   configure_command = ["./configure",
                        "--disable-slapd",
@@ -40,8 +39,8 @@ build do
                        "--prefix=#{install_dir}/embedded"]
 
   command configure_command.join(" "), :env => env
-  
+
   command "make depend", :env => env
   command "make -j #{max_build_jobs}", :env => env
-  command "make install", :cwd => "#{prject_dir}/libraries/libldap", :env => env
+  command "make install", :env => env
 end

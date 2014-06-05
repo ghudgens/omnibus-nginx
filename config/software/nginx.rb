@@ -52,7 +52,7 @@ ruby_cmpt = project.library.components.find { |c| c.name == 'ruby' }
 pgem_cmpt = project.library.components.find { |c| c.name == 'passenger-gem' }
 
 build do
-  command "git clone https://github.com/kvspb/nginx-auth-ldap.git"
+  command "git clone https://github.com/ghudgens/nginx-auth-ldap.git"
 
   configure_command = ["./configure",
                        "--prefix=#{install_dir}/embedded",

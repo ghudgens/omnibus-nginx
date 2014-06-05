@@ -21,7 +21,6 @@ dependency "curl"
 dependency "pcre"
 dependency "openssl"
 dependency "passenger-gem"
-dependency "addressable-gem"
 
 version "1.4.4" do
   source md5: "5dfaba1cbeae9087f3949860a02caa9f"

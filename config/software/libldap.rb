@@ -15,10 +15,10 @@
 # limitations under the License.
 #
 name "libldap"
-default_version "2.4.9"
+default_version "2.4.39"
 
-version "2.4.9" do
-  source md5: "1d0c8913b4671b2e2e66ed546b4e9bbf"
+version "2.4.39" do
+  source md5: "b0d5ee4b252c841dec6b332d679cf943"
 end
 
 source url: "ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-#{version}.tgz"
@@ -29,7 +29,7 @@ working_dir = "#{project_dir}/openldap-#{version}"
 
 env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
         "CFLAGS"      => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -D_GNU_SOURCE",
         "LD_RUN_PATH" => "#{install_dir}/embedded/lib"
 }
 
@@ -37,6 +37,8 @@ build do
   command "git clone https://github.com/kvspb/nginx-auth-ldap.git"
 
   configure_command = ["./configure",
+                       "--disable-slapd",
+                       "--disable-slurpd",
                        "--prefix=#{install_dir}/embedded"]
 
   command configure_command.join(" "), :env => env

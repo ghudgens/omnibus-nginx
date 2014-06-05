@@ -32,7 +32,8 @@ override :'nginx', version: "1.6.0"
 dependency 'preparation'
 
 # nginx dependencies/components
-# dependency 'somedep'
+dependency 'passenger-gem'
+dependency 'nginx'
 
 # version manifest file
 dependency 'version-manifest'

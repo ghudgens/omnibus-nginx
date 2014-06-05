@@ -25,11 +25,9 @@ source url: "ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-#{ver
 
 relative_path "openldap-#{version}"
 
-working_dir = "#{project_dir}/openldap-#{version}"
-
-env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-        "CFLAGS"      => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -D_GNU_SOURCE",
+env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include",
+        "CFLAGS"      => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include",
+        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -L#{prject_dir}/libraries -I#{install_dir}/embedded/include -D_GNU_SOURCE",
         "LD_RUN_PATH" => "#{install_dir}/embedded/lib"
 }
 
@@ -45,5 +43,5 @@ build do
   
   command "make depend", :env => env
   command "make -j #{max_build_jobs}", :env => env
-  command "make install", :cwd => "#{working_dir}/libraries/libldap", :env => env
+  command "make install", :cwd => "#{prject_dir}/libraries/libldap", :env => env
 end

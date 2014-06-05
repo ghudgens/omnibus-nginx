@@ -25,6 +25,8 @@ source url: "ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-#{ver
 
 relative_path "openldap-#{version}"
 
+working_dir = "#{project_dir}/#{relative_path}"
+
 env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
         "CFLAGS"      => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
         "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",

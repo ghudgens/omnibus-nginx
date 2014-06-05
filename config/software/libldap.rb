@@ -37,8 +37,6 @@ build do
   configure_command = ["./configure",
                        "--prefix=#{install_dir}/embedded"]
 
-  command "cd libraries/libldap && make install", :env => configure_env
-
   command configure_command.join(" "), :env => env
   
   command "make depend", :env => env

@@ -1,5 +1,5 @@
 #
-# Copyright:: Copyright (c) 2012-2014 Chef Software, Inc.
+# Copyright:: Copyright (c) 2014 Grant Hudgens.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,50 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 name "libpng"
-default_version "1.5.17"
+default_version "1.6."
 
 dependency "zlib"
 
-source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/history/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-
-#Current releases
-version "1.0.61" do
-  source :md5 => "1d65f75274d2d215fbbe08b0c5ae6b95"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
-
-version "1.2.51" do
-  source :md5 => "e358f9a265f2063b36f10dc454ee0e17"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
-
-version "1.4.13" do
-  source :md5 => "020c19f3216e9e65c8b6de56b13bc001"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
-
-version "1.5.18" do
-  source :md5 => "5266905cef49d1224437465ad4d67fd9"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
-
-version "1.6.11" do  
+version "1.6.11" do
   source :md5 => "967be11a119823e32fa6a3b90e8131fa"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
 end
 
-#Historical releases
-version "1.5.13" do
-  source :md5 => "9c5a584d4eb5fe40d0f1bc2090112c65"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/history/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
-
-version "1.5.17" do
-  source :md5 => "d2e27dbd8c6579d1582b3f128fd284b4"
-  source :url => "ftp://ftp.simplesystems.org/pub/libpng/png/src/history/libpng#{version.match(/^(\d+\.\d+)/)[0].gsub(/\D/, '')}/libpng-#{version}.tar.gz"
-end
+source :url => "http://downloads.sourceforge.net/libpng/libpng-#{version}.tar.gz"
 
 relative_path "libpng-#{version}"
 

@@ -23,7 +23,6 @@ dependency "libxslt"
 dependency "libxml2"
 dependency "libiconv"
 dependency "openssl"
-dependency "gd"
 
 version "5.4.29" do
   source md5: "9caf973b19ba93bb2b78f78c61643d5d"
@@ -50,7 +49,8 @@ build do
            "--with-libxml-dir=#{install_dir}/embedded",
            "--with-iconv=#{install_dir}/embedded",
            "--with-openssl-dir=#{install_dir}/embedded",
-           "--with-gd=#{install_dir}/embedded",
+           "--with-png-dir=#{install_dir}/embedded",
+           "--with-gd",
            "--enable-fpm",
            "--with-fpm-user=nginx",
            "--with-fpm-group=nginx"].join(" "),

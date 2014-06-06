@@ -25,6 +25,7 @@ build_iteration 0
 
 # Specify dependency versions to embed
 override :'ruby', version: "2.0.0-p451"
+override :'php', version: "5.4.29"
 override :'passenger-gem', version: "4.0.42"
 override :'libldap', version: "2.4.39"
 override :'nginx', version: "1.6.0"
@@ -33,6 +34,8 @@ override :'nginx', version: "1.6.0"
 dependency 'preparation'
 
 # nginx dependencies/components
+dependency 'ruby'
+dependency 'php'
 dependency 'passenger-gem'
 dependency 'nginx'
 

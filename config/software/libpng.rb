@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 name "libpng"
-default_version "1.6."
+default_version "1.6.11"
 
 dependency "zlib"
 

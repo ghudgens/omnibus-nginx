@@ -19,6 +19,7 @@ default_version "5.4.29"
 
 dependency "zlib"
 dependency "pcre"
+dependency "libpng"
 dependency "libxslt"
 dependency "libxml2"
 dependency "libiconv"

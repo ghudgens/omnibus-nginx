@@ -27,7 +27,7 @@ version "2.7.7" do
   source :md5 => "cf842800b67841d64e7fb3cd8acb5663"
 end
 
-source :url => "http://python.org/ftp/python/#{version}/Python-#{version}.tgz",
+source :url => "http://python.org/ftp/python/#{version}/Python-#{version}.tgz"
 
 relative_path "Python-#{version}"
 

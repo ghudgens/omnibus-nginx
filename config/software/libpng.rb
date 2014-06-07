@@ -27,8 +27,9 @@ source :url => "http://downloads.sourceforge.net/libpng/libpng-#{version}.tar.gz
 
 relative_path "libpng-#{version}"
 
-env = { "LDFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-        "CFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+env = { "LDFLAGS"     => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+        "CFLAGS"      => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
+        "CPPFLAGS"    => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
         "LD_RUN_PATH" => "#{install_dir}/embedded/lib"}
 
 build do
